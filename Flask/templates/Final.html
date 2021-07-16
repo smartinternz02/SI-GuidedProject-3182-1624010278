@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction</title>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/final1.css') }}">
+	<link rel="stylesheet" href="C:\Users\FAREENASIMMIN\Detection of Phishing Websites\Flask\static\css\final1.css">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+<div>NILA</div>
+	<ul>
+		
+		
+		<li><a href="C:\Users\FAREENASIMMIN\Detection of Phishing Websites\Flask\index.html#contact">Contact</a></li>
+		<li><a href="C:\Users\FAREENASIMMIN\Detection of Phishing Websites\Flask\index.html#about">About</a></li>
+		<li><a href="C:\Users\FAREENASIMMIN\Detection of Phishing Websites\Flask\index.html">Home</a></li>
+	</ul>
+</div>
+
+<div class="main">
+<h1>Phishing Website Detection using Machine Learning<h1>
+</div>
+<form action="{{ url_for('y_predict')}}"method="post">
+    	<input type="text" name="URL" placeholder="Enter the URL to be verified" required="required" />
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</form>
+		<br>
+		<br>
+		
+		<div id='result',class='result' style='color:black;font-size:30px;'>{{ prediction_text }}</div>
+		<a href=" {{ url }} "> {{ url }} </a>
+	<!-- Template Main JS File -->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
